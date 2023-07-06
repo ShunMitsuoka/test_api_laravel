@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input, textarea{
+    border: 1px solid black;
+    border-radius: .25rem;
+    padding-block: .25rem;
+    padding-inline: .25rem;
+}
