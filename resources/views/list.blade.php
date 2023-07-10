@@ -120,14 +120,13 @@
             alert('更新に成功しました。');
             clearValue();
             closeModal();
+            closeLoading();
             loadList();
         })
         // catchでエラー時の挙動を定義
         .catch(err => {
             console.log(err);
             alert('更新に失敗しました。');
-        })
-        .finally(() => {
             closeLoading();
         });
     }
@@ -140,13 +139,13 @@
             axios.delete("http://localhost/api/article/" + id)
             .then(response => {
                 alert('削除に成功しました。');
-                loadList();
             })
             .catch(err => {
                 alert('削除に失敗しました。');
             })
             .finally(() => {
                 closeLoading();
+                loadList();
             });
         }
     }
